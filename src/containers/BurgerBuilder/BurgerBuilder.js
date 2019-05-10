@@ -30,6 +30,10 @@ class BurgerBuilder extends React.Component {
       this.setState({buying: true});
     }
 
+    buyingCancel = () => {
+      this.setState({buying: false});
+    }
+
     updateBuyState(ingredients) {
 
       const sum = Object.keys(ingredients)
@@ -76,7 +80,7 @@ class BurgerBuilder extends React.Component {
       }
         return (
         <Aux>
-          <Modal show={this.state.buying}>
+          <Modal show={this.state.buying} modalClosed={this.buyingCancel}>
             <OrderSummary ingredients={this.state.ingredients} />
           </Modal>
           <Burger ingredients={this.state.ingredients} />
