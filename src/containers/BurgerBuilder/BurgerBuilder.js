@@ -26,7 +26,7 @@ class BurgerBuilder extends React.Component {
       buying: false
     }
 
-    buyingHandler () {
+    buyingHandler = () => {
       this.setState({buying: true});
     }
 
@@ -76,7 +76,7 @@ class BurgerBuilder extends React.Component {
       }
         return (
         <Aux>
-          <Modal>
+          <Modal show={this.state.buying}>
             <OrderSummary ingredients={this.state.ingredients} />
           </Modal>
           <Burger ingredients={this.state.ingredients} />
@@ -85,7 +85,9 @@ class BurgerBuilder extends React.Component {
           ingredientRemoved={this.removeIngredientHandler}
           disabled={disabledInfo}
           price={this.state.totalPrice} 
-          buyable={this.state.buyable} />
+          ordered={this.buyingHandler}
+          buyable={this.state.buyable} 
+           />
         </Aux>
         );
     }
