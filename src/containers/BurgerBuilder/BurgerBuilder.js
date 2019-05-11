@@ -88,7 +88,8 @@ class BurgerBuilder extends React.Component {
             <OrderSummary 
               ingredients={this.state.ingredients}
               buyCancelled={this.buyingCancel}
-              buyContinued={this.buyingContinue} />
+              buyContinued={this.buyingContinue}
+              price={this.state.totalPrice} />
 
           </Modal>
           <Burger ingredients={this.state.ingredients} />
