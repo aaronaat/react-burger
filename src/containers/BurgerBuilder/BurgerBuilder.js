@@ -89,7 +89,7 @@ class BurgerBuilder extends React.Component {
               ingredients={this.state.ingredients}
               buyCancelled={this.buyingCancel}
               buyContinued={this.buyingContinue}
-              price={this.state.totalPrice} />
+              price={this.state.totalPrice.toFixed(2)} />
 
           </Modal>
           <Burger ingredients={this.state.ingredients} />
@@ -97,7 +97,7 @@ class BurgerBuilder extends React.Component {
           ingredientAdded={this.addIngredientHandler}
           ingredientRemoved={this.removeIngredientHandler}
           disabled={disabledInfo}
-          price={this.state.totalPrice} 
+          price={this.state.totalPrice.toFixed(2)} 
           ordered={this.buyingHandler}
           buyable={this.state.buyable} 
            />
