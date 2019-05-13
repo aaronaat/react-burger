@@ -31,7 +31,7 @@ class BurgerBuilder extends React.Component {
     }
 
     buyingContinue = () => {
-      alert('Enjoy your burger!');
+      this.props.history.push('/checkout');
     }
 
     buyingCancel = () => {
@@ -85,7 +85,7 @@ class BurgerBuilder extends React.Component {
         return (
         <Aux>
           <Modal show={this.state.buying} modalClosed={this.buyingCancel}>
-            <OrderSummary 
+            <OrderSummary
               ingredients={this.state.ingredients}
               buyCancelled={this.buyingCancel}
               buyContinued={this.buyingContinue}
@@ -97,9 +97,9 @@ class BurgerBuilder extends React.Component {
           ingredientAdded={this.addIngredientHandler}
           ingredientRemoved={this.removeIngredientHandler}
           disabled={disabledInfo}
-          price={this.state.totalPrice.toFixed(2)} 
+          price={this.state.totalPrice.toFixed(2)}
           ordered={this.buyingHandler}
-          buyable={this.state.buyable} 
+          buyable={this.state.buyable}
            />
         </Aux>
         );
